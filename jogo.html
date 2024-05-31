@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clique aqui amor</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000;
+        }
+        canvas {
+            border: 2px solid #fff;
+            background-color: #222; /* Cor de fundo para o canvas */
+            display: block; /* Garante que o canvas seja exibido como um bloco */
+            margin: 0 auto; /* Centraliza o canvas horizontalmente */
+        }
+        #startButton {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #fff;
+            color: #000;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="gameCanvas" style="display: none;"></canvas>
+    <button id="startButton">Começar o Jogo</button>
+    <script src="game.js"></script>
+    <script>
+        const startButton = document.getElementById('startButton');
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+
+        const tileSize = 64; // Tamanho maior para melhor visualização
+        const playerSize = tileSize;
+        const mapWidth = 10;
+        const mapHeight = 10;
+
+        canvas.width = mapWidth * tileSize;
+        canvas.height = mapHeight * tileSize;
+
+        // Restante do código JavaScript do jogo aqui...
+
+        startButton.addEventListener('click', () => {
+            canvas.style.display = 'block'; // Mostrar o canvas ao clicar no botão
+            startButton.style.display = 'none'; // Esconder o botão após o clique
+            gameLoop(); // Iniciar o jogo
+        });
+    </script>
+</body>
+</html>
